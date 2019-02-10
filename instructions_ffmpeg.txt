@@ -1,0 +1,11 @@
+# Work on bash script to automate commands to create video from images in a folder 
+
+# Make a file list: 
+#  ls *.jpg | sort -V | xargs -I {} echo "file '{}'" > list.txt
+
+# Make a file list with names for safer addressing: 
+# for f in *.jpg; do echo "file '$PWD/$f'" >> filelist.txt; done 
+
+# Use ffmpeg on the file list: 
+# ffmpeg -r 1 -f concat -safe 0 -i filelist.txt video.mp4 
+
